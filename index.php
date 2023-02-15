@@ -1,81 +1,60 @@
-<!DOCTYPE html>
-<html lang="br">
+<?php
+    // Composer autoloader
+    require 'composer/vendor/autoload.php';
+    
+    // Autoload controllers and models
+    spl_autoload_register(function ($class_name) {
+        $path = "src/controller/{$class_name}.php";
+        $path2 = "src/model/{$class_name}.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pão e Circo</title>
-    <link rel="stylesheet" type="text/css" href="estilos/principal.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./index.js"></script>
-    <script src="./scripts/formToJson.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="estilos/jquery.rateyo.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+        if(file_exists($path)) include $path;
+        else if(file_exists($path2)) include $path2;
+    });
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    // Include routes
+    include 'src/route.php';
+    
+    $httpMethod = $_SERVER['REQUEST_METHOD'];
+    $uri = $_SERVER['REQUEST_URI'];
+    
+    // Strip query string (?foo=bar) and decode URI
+    if (false !== $pos = strpos($uri, '?')) {
+        $uri = substr($uri, 0, $pos);
+    }
+    $uri = rawurldecode($uri);
+    
+    $uri = str_replace("/construcao-software", "", $uri);
+    
+    $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 
+    switch($routeInfo[0])
+    {
+        case FastRoute\Dispatcher::NOT_FOUND:
+        {
+            echo "Error 404: Page not found";
+            break;
+        }
+        case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+        {
+            $allowedMethods = $routeInfo[1];
+            echo "Error 405: Method Not Allowed";
+            break;
+        }
+        case FastRoute\Dispatcher::FOUND:
+        {
+            $handler = $routeInfo[1];
+            $vars = $routeInfo[2];
+            
+            // Create and call controller
+            $controller = new $handler[0]();
+            $method = $handler[1];
+            $controller->$method();
+            break;
+        }
+    }
 
-</head>
-
-<body>
-    <div id="interface">
-        <header id="cabecalho">
-            <table>
-                <tr>
-                    <td rowspan="3"><img class="logo" src="img/paoecirco.png"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>Buscar:</td>
-                                <td><input id="buscaTroca" type="text"></td>
-                                <td><button id="btnBusca">Pesquisar</button></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <table id="cab">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td id="nav-create-account" class="nav-click" onclick="loadPage('create-account-page')">
-                                    Crie sua Conta</td>
-                                <td id="nav-login" class="nav-click" onclick="loadPage('login-page')">Entre</td>
-                                <td id="nav-anuncie-page" class="nav-click" onclick="loadPage('anuncie-page')">Anuncie</td>
-
-                                <td id="nav-gerenciar-perfil" class="nav-click"
-                                    onclick="loadPage('gerenciar-perfil-page')">Gerenciar perfil</td>
-                                <td id="nav-rate" class="nav-click" onclick="loadPage('rate-user-page')">Avaliação</td>
-                                <td id="nav-exit" class="nav-click" onclick="logout()">Sair</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </header>
-
-        <section id="corpo">
-        </section>
-
-        <footer id="rodape">
-            <div>
-                <p>Copyright 2023 @ UEM.br LTDA</p>
-                <p>Contato: (44)99999-9999 E-mail: contato@ contato.com</p>
-            </div>
-        </footer>
-    </div>
-</body>
-
-</html>
+    function renderView($view)
+    {
+        include __DIR__ . '/src/view/' . $view . '.php';
+    }
+?>
