@@ -1,2 +1,2 @@
-# projeto-arq-soft-2022
-projeto da disciplina de arquitetura de software 2022 informática uem
+# Pão e Circo
+Projeto da disciplina de Construção de Software 2022 Informática UEM.
