@@ -4,15 +4,17 @@
     
     // Autoload controllers and models
     spl_autoload_register(function ($class_name) {
-        $path = "src/controller/{$class_name}.php";
-        $path2 = "src/model/{$class_name}.php";
+        $path = "app/controller/{$class_name}.php";
+        $path2 = "app/model/{$class_name}.php";
+        $path3 = "inc/{$class_name}.php";
 
         if(file_exists($path)) include $path;
         else if(file_exists($path2)) include $path2;
+        else if(file_exists($path3)) include $path3;
     });
 
     // Include routes
-    include 'src/route.php';
+    include 'app/route.php';
     
     $httpMethod = $_SERVER['REQUEST_METHOD'];
     $uri = $_SERVER['REQUEST_URI'];
@@ -55,6 +57,6 @@
 
     function renderView($view)
     {
-        include __DIR__ . '/src/view/' . $view . '.php';
+        include __DIR__ . '/app/view/' . $view . '.php';
     }
 ?>
