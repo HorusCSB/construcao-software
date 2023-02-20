@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/estilos/gerenciar-perfil-page.css">
+<link rel="stylesheet" href="assets/styles/gerenciar-perfil-page.css">
 <script src="assets/scripts/gerenciar-perfil-page.js"></script>
 <div id="gerenciar-perfil-page">
     <div class="card">

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/estilos/login-page.css">
+<link rel="stylesheet" href="assets/styles/login-page.css">
 <div id="login-page">
     <div class="card">
         <div class="card-header">

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/estilos/propagandas-page.css">
+<link rel="stylesheet" href="assets/styles/propagandas-page.css">
 
 <script>
        const inFile = document.getElementById("banner");

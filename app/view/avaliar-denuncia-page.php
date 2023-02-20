@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/estilos/avaliar-denuncia-page.css">
+<link rel="stylesheet" href="assets/styles/avaliar-denuncia-page.css">
 
 <script>
     $("#denuncia-pato").hide();

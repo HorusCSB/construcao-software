@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/estilos/rate-user-page.css">
+<link rel="stylesheet" href="assets/styles/rate-user-page.css">
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="jquery.rateyo.min.js"></script>
 

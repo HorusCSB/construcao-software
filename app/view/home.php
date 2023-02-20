@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pão e Circo</title>
-    <link rel="stylesheet" type="text/css" href="assets/estilos/principal.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/principal.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/scripts/home.js"></script>
     <script src="assets/scripts/formToJson.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/estilos/jquery.rateyo.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/jquery.rateyo.min.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 

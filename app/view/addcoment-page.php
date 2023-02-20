@@ -1,4 +1,4 @@
-    <link rel="stylesheet" type="text/css" href="assets/estilos/addcoment.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/addcoment.css">
     <script type="text/javascript" src="assets/scripts/addcoments.js"></script>
 
     <section id="addcoment-page">

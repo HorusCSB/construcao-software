@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/estilos/destaque-page.css">
+<link rel="stylesheet" href="assets/styles/destaque-page.css">
 
 <script>
     function dadosCartao(show) {

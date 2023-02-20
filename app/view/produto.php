@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pão e Circo</title>
-	<link rel="stylesheet" type="text/css" href="assets/estilos/principal.css">
-    <link rel="stylesheet" type="text/css" href="assets/estilos/produto.css">
+	<link rel="stylesheet" type="text/css" href="assets/styles/principal.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/produto.css">
     <script type="text/javascript" src="assets/scripts/produto.js"></script>
 </head>
 <body>

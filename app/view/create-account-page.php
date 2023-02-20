@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/estilos/create-account-page.css">
+<link rel="stylesheet" href="assets/styles/create-account-page.css">
 <script src="assets/scripts/create-account-page.js"></script>
 
 <div id="create-account-page">

@@ -1,4 +1,4 @@
-    <link rel="stylesheet" type="text/css" href="assets/estilos/denuncia.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/denuncia.css">
     <script type="text/javascript" src="./scripts/denuncia.js"></script>
     <section id="denuncia-page">
     	<form id="addComentario">

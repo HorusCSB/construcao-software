@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aceitar Oferta</title>
-    <link rel="stylesheet" type="text/css" href="assets/estilos/principal.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/principal.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/scripts/home.js"></script>
     <script src="assets/scripts/formToJson.min.js"></script>

@@ -1,4 +1,4 @@
-    <link rel="stylesheet" type="text/css" href="assets/estilos/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/index.css">
     <script type="text/javascript" src="./scripts/principal.js"></script>
         <section id="principal-page">
             <div id="banner">
